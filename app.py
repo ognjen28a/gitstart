@@ -9,6 +9,39 @@ app = Flask(__name__)
 def index():
   return "Zdravo"
 
+@app.route("/primer-string")
+def string():
+  return "Tekst"
+
+@app.route("/primer-niz")
+def niz():
+  nekiNiz = [1,2,3,4,5]
+  return nekiNiz
+
+@app.route("/primer-json")
+def primerJson():
+  data = {
+    "message": "JSON response"
+    "status" : "success"
+  }
+  return (data)
+
+@app.route("/primer-html")
+def primerHTML():
+  data = """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset = "UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <h1>Zdravo programeri</h1>
+</body>
+</html>"""
+  return data
 
 if __name__ == '__main__':
   app.run()
