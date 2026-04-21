@@ -21,7 +21,7 @@ def niz():
 @app.route("/primer-json")
 def primerJson():
   data = {
-    "message": "JSON response"
+    "message": "JSON response",
     "status" : "success"
   }
   return (data)
