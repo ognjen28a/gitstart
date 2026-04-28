@@ -1,28 +1,22 @@
+ data = """<!DOCTYPE html>
+<html lang="en">
 <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+   <meta http-equiv= "X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <link rel="stylesheet" href="static/style.css">
+</head>
 <body>
-    <header>
-        <div class="container sredna">
-            <img src="logo.jpg" alt="Brzi fast food">
-            <h3>najbrza dostava u gradu!!!!!!!!!!!</h3>
-        </div>
-
-    </header>
-    <div class="continer sredina">
-        <h2>{{ naslov }}</h2>
-        <p>{{spisak}}</p>
-        <ul>
-            {% for stavka in spisak%}
-                <li><a href="/restoran">{{stavka}}</a></li>
-                {% enfdfor %}
-        </ul>
-    </div>
-</main>
-<footer>
-    <div class="container sredina"
-        <h4>Brzi doo, Leskovac</h4>
-        <h4>Proleterska 34</h4>
-        <h4>055 256 256</h4>
-    </div>
-</footer>
+   <h1>Zdravo brt</h1>
+   <h1>Pozdrav sa template-a</h1>
+   <h3>{{ naziv }}</h3>
+   <p>{{spisak}}</p>
+  <ul>
+           {% for stavka in spisak %}
+           <li><a href="https://gitstart47.onrender.com/restoran">{{ stavka }}</a></li>
+        {% endfor %}
+      </ul>
 </body>
 </html>
