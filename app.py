@@ -7,17 +7,17 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-  nazivSpiska = "Spisak restorana"
-  spisakRestorana = ["Pastica","Pica Tim","HasHub", "Sahara"]
+ naslovSpiska="Restorani"
+ #spisakRestorana = ["Gros", "ABC", "Bavka", "Princ"]
+ con = sqlite3.connect('dostavahrane.db')
 
-  return render_template("index.html",naziv=nazivSpiska, spisak = spisakRestorana)
+ cur = con.cursor()
+ cur.execute("SELECT naziv FROM restoran LIMIT 10")
 
-@app.route("/restoran")
-def restoran():
-  nazivRestorana = "Pastica"
-  spisakJela = ["Karbonara mala","Karbonara velika","Srednja", "nzm"]
-
-  return render_template("restoran.html",naziv=nazivRestorana, spisak = spisakJela)
+ restoran = cur.fetchall()
+ return render_template("index.html",
+               naslov = naslovSpiska,
+               spisak = restoran)
 
 if __name__ == '__main__':
   app.run()
