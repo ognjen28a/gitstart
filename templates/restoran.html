@@ -1,28 +1,31 @@
+  data = """<!DOCTYPE html>
+<html lang="en">
 <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+   <meta http-equiv= "X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <link rel="stylesheet" href="static/style.css">
+</head>
 <body>
-    <header>
-        <div class="container sredna">
-            <img src="logo.jpg" alt="Brzi fast food">
-            <h3>najbrza dostava u gradu!!!!!!!!!!!</h3>
-        </div>
-
-    </header>
-    <div class="continer sredina">
-        <h2>{{ naslov }}</h2>
-        <p>{{spisak}}</p>
-        <ul>
-            {% for stavka in spisak%}
-                <li></li>
-                {% enfdfor %}
-        </ul>
+   <h1>Meni brt</h1>
+   <h1>Restoran brt</h1>
+   <h3>{{ naziv }}</h3>
+   <p>{{spisak}}</p>
+  <ul>
+        {% for stavka in spisak %}
+          <li>{{ stavka }}</li>
+        {% endfor %}
+      </ul>
+</div>
+  </main>
+  <footer>
+    <div class="container sredina">
+      <h6>Brzi doo, Leskovac</h6>
+      <h6>Vojvode putnika 10</h6>
+      <h6>064 355 6767</h6>
     </div>
-</main>
-<footer>
-    <div class="container sredina"
-        <h4>Brzi doo, Leskovac</h4>
-        <h4>Proleterska 34</h4>
-        <h4>055 256 256</h4>
-    </div>
-</footer>
+  </footer>
 </body>
 </html>
