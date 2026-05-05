@@ -9,7 +9,7 @@ app = Flask(__name__)
 def index():
  naslovSpiska="Restorani"
  #spisakRestorana = ["Gros", "ABC", "Bavka", "Princ"]
- con = sqlite3.connect('dostavahrane.db')
+ con = sqlite3.connect('dostavaHrane.db')
 
  cur = con.cursor()
  cur.execute("SELECT naziv FROM restoran LIMIT 10")
