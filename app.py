@@ -26,8 +26,7 @@ def restoran(id_rest):
  cur = con.cursor()
  query = f"select naziv from meni where id_restorana=={id_rest}"
  cur.execute(query)
-
-jela = cur.fetchall()
+ jela = cur.fetchall()
  return render_template("restoran.html",
                naslov = naslovSpiska,
                spisak = jela)
