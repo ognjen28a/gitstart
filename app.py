@@ -9,7 +9,7 @@ app = Flask(__name__)
 def index():
  naslovSpiska="Restorani"
  #spisakRestorana = ["Gros", "ABC", "Bavka", "Princ"]
- con = sqlite3.connect('dostavaHrane.db')
+ con = sqlite3.connect('dostavahrane.db')
 
  cur = con.cursor()
  cur.execute("SELECT naziv FROM restoran LIMIT 10")
@@ -18,9 +18,6 @@ def index():
  return render_template("index.html",
                naslov = naslovSpiska,
                spisak = restoran)
-
-if __name__ == '__main__':
-  app.run()
 
 @app.route("/primer-string")
 def string():
