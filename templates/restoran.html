@@ -1,4 +1,4 @@
-  data = """<!DOCTYPE html>
+ data = """<!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
@@ -6,26 +6,21 @@
 initial-scale=1.0">
    <meta http-equiv= "X-UA-Compatible" content="ie=edge">
    <title>Document</title>
-   <link rel="stylesheet" href="static/style.css">
+   <link rel="stylesheet" href="{{ url_for('static',  filename='style.css') }}" />
 </head>
 <body>
-   <h1>Meni brt</h1>
-   <h1>Restoran brt</h1>
-   <h3>{{ naziv }}</h3>
-   <p>{{spisak}}</p>
+   <header>
+      <img src="{{ url_for('static',filename='logo.jpg') }}" alt="buhhhhhhhh">
+      <h1>Zdravo brt</h1>
+      <h1>Pozdrav sa template-a</h1>
+      <h3>{{ naziv }}</h3>
+      <p>{{spisak}}</p>
+   </header>
+   
   <ul>
-        {% for stavka in spisak %}
-          <li>{{ stavka }}</li>
+           {% for stavka in spisak %}
+           <li><a href="/restoran/{{stavka.id}}">{{ stavka.naziv }}</a></li>
         {% endfor %}
       </ul>
-</div>
-  </main>
-  <footer>
-    <div class="container sredina">
-      <h6>Brzi doo, Leskovac</h6>
-      <h6>Vojvode putnika 10</h6>
-      <h6>064 355 6767</h6>
-    </div>
-  </footer>
 </body>
 </html>
